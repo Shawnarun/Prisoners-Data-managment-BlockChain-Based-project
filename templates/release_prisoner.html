@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <link rel="stylesheet" href='../static/style1.css' />
+</head>
+<body>
+    <div id="bg1"></div>
+    <div id="body">
+        <div class="options">
+            <img src="../static/pics/icon21.png" alt="icon">
+
+            <button class="active" id="new_entry_btn" onclick="window.location.href='/home'">Enter New Prisoner</button>
+            <button id="prisoner_data" onclick="window.location.href='/prisoners_data'">Prisoner Data</button>
+            <button id="release_prisoner" onclick="window.location.href='/release_prisoner'">Release Prisoner</button>
+            <button id="dash_board" onclick="window.location.href='/dashboard'">Dash Board</button>
+            <button id="logout_btn" onclick="window.location.href='/login'">Log Out</button>
+        </div>
+
+        <div class="release_form">
+            <form id="search" method="post" action="" autocomplete="off"> 
+                <input type="search" id="search_input" placeholder="search" name="searched_data">
+                <button action="" name="search"> <img src="../static/pics/search.png" alt=""></button>
+            </form>
+            
+            <div class="release_entry">
+            
+                    <img src="{{ user_image }}" alt="icon">
+                    <form method="post" action="" autocomplete="off">
+                        <label for="release_id">ID &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="release_id" name="id" value="" readonly><br/>
+                        
+                        <label for="release_name">Name &nbsp &nbsp: </label>
+                        <input type="text" id="release_name" value="" readonly><br/>
+
+                        <label for="release_date">Date &nbsp &nbsp: </label>
+                        <input type="text" id="release_date" placeholder="Enter the release date" name="release_date"><br/>
+
+                        <label for="release_reason">Reason &nbsp: </label>
+                        <input type="text" id="release_reason" placeholder="Enter the releasing reason" name="releasing_reason"><br/>
+                        <button class="form-btn" id="release_btn" name="release" >Release</button>
+                    </form>
+                    
+               
+            </div>
+        </div>
+    </div>
+    <div id="bg2"></div>
+   
+</body>
+</html>

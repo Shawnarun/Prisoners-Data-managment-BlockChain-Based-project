@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <link rel="stylesheet" href='../static/style1.css' />
+</head>
+<body>
+    <div id="bg1"></div>
+    <div id="body">
+        <div class="options">
+            <img src="../static/pics/icon21.png" alt="icon">
+
+            <button class="active" id="new_entry_btn" onclick="window.location.href='/home'">Enter New Prisoner</button>
+            <button id="prisoner_data" onclick="window.location.href='/prisoners_data'">Prisoner Data</button>
+            <button id="release_prisoner" onclick="window.location.href='/release_prisoner'">Release Prisoner</button>
+            <button id="dash_board" onclick="window.location.href='/dashboard'">Dash Board</button>
+            <button id="logout_btn" onclick="window.location.href='/login'">Log Out</button>
+        </div>
+
+        <div class="prisoner_form">
+            <form id="search" method="post" action="" autocomplete="off"> 
+                <input type="search" id="search_input" name="searched_data" placeholder="search">
+                <button id="search_icon" name="search"> <img src="../static/pics/search.png" alt=""></button>
+            </form>
+
+            <div class="prisoner_data">
+           
+            <img src="../static/pics/icon2.png" alt="icon">
+
+            <form action="" method="post" autocomplete="off">
+                    
+                        <label for="id">ID &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="id" value="" readonly/> <br/>
+
+                        <label for="name">Name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="name" value="" readonly/><br/>
+
+                        <label for="bod">D.O.B &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : </label>
+                        <input type="text" id="bod" value="" readonly/><br/>
+
+                        <label for="nic">NIC &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : </label>
+                        <input type="text" id="nic" value="" readonly/><br/>
+
+                        <label for="address">Address &nbsp &nbsp &nbsp &nbsp &nbsp : </label>
+                        <input type="text" id="address" value="" readonly><br/>
+
+                        <label for="bio">Bio &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : </label>
+                        <input type="text" id="bio" value="" readonly><br/>
+
+                        <label for="details">Criminal <br/> Activity Details &nbsp: </label>
+                        <input type="text" id="details" value="" readonly><br/>
+
+                        <label for="punishment_details">Punishment Details: </label>
+                        <input type="text" id="punishment_details" value="" readonly><br/>
+                        
+                        <label for="family_details">Family Details &nbsp &nbsp: </label>
+                        <input type="text" id="family_details" value="" readonly><br/>
+                    </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="bg2"></div>
+    <script src="js/index.js"></script>
+</body>
+</html>

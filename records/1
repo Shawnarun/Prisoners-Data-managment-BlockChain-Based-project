@@ -1,0 +1,17 @@
+{
+    "ID": "001",
+    "Name": "John Wick",
+    "D.O.B": "34",
+    "NIC": "5ft 6inches",
+    "Address": "85kg",
+    "Bio": "He Committed in a murder of a murder of a young girl and the case trail will start on 12th January 2023",
+    "CriminalActivityDetails": "85kg",
+    "PunishmentDetails": "85kg",
+    "FamilyDetails": "85kg",
+    "EntryDate": "85kg",
+    "Release Date": "85kg",
+    "prev_block": {
+        "hash": "",
+        "filename": ""
+    }
+}

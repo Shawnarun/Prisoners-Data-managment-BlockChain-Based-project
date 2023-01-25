@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <link rel="stylesheet" href='../static/style1.css' />
+</head>
+<body id="login_page">
+    <form class="login_form" name="f1" method="post" action="" onsubmit = "return validation()"autocomplete="off">
+        <div class="login" id="login_id">
+            <input type="text" placeholder="Enter User ID" name="user" required>
+            <br>
+        </div>
+        <div class="login" id="login_password">
+            <input type="password" placeholder="Enter Password" name="pass" required minlength="6">
+            <br>
+        </div>
+        <button type="submit" id="login_button" name="submit" onclick="window.location.href='/home'" >Login</button>
+    </form>  
+
+   
+
+
+<script>
+    if(window.history.replaceState){
+        window.history.replaceState(null,'', window.location.href)
+    }
+</script>
+
+</body>
+</html>

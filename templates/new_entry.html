@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <link rel="stylesheet" href='../static/style1.css' />
+</head>
+<body>
+    <div id="bg1"></div>
+    <div id="body">
+        <div class="options">
+            <img src="../static/pics/icon21.png" alt="icon">
+
+            <button class="active" id="new_entry_btn" onclick="window.location.href='/home'">Enter New Prisoner</button>
+            <button id="prisoner_data" onclick="window.location.href='/prisoners_data'">Prisoner Data</button>
+            <button id="release_prisoner" onclick="window.location.href='/release_prisoner'">Release Prisoner</button>
+            <button id="dash_board" onclick="window.location.href='/dashboard'">Dash Board</button>
+            <button id="logout_btn" onclick="window.location.href='/login'">Log Out</button>
+        </div>
+        <div class="entry_form">
+            <div class="new_entry">
+                   <img src="{{ user_image }}" alt="icon">
+
+                    <form method="post" action="<?php $_PHP_SELF?>" autocomplete="off">
+                          <input class="form-control" type="file" name="uploadfile" value="" /><br/>
+                        <label for="id">ID &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="id" name="id"><br/>
+
+                        <label for="name">Name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="name" name="name"><br/>
+
+                        <label for="dob">D.O.B &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp: </label>
+                        <input type="text" id="dob" name="dob"><br/>
+
+                        <label for="nic">NIC &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp: </label>
+                        <input type="text" id="nic" name="nic"><br/>
+
+                        <label for="address">Address &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp: </label>
+                        <input type="text" id="address" name="address"><br/>
+
+                        <label for="bio">Bio &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp: </label>
+                        <input type="text" id="bio" name="bio"><br/>
+
+                        <label for="cad">Criminal <br> Activity Details &nbsp: </label>
+                        <input type="text" id="cad" name="cad"><br/>
+                        
+                        <label for="pd">Punishment Details: </label>
+                        <input type="text" id="pd" name="pd"><br/>
+                        
+                        <label for="fd">Family Details &nbsp &nbsp: </label>
+                        <input type="text" id="fd" name="fd"><br/>
+
+                        <label for="ed">Entry Date &nbsp &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="ed" name="ed"><br/>
+
+                        <label for="rd">Release Date &nbsp &nbsp &nbsp: </label>
+                        <input type="text" id="rd" name="rd"><br/>
+                        <button type="submit" name="submit" class="form-btn" id="new_entry_save_btn">Save</button>
+                    </form>
+
+                    
+                    
+            </div>
+        </div>
+    </div>
+    <div id="bg2"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Document</title>
+    <link rel="stylesheet" href='../static/style1.css' />
+</head>
+<body>
+    <div id="bg1"></div>
+    <div id="body">
+        <div class="options">
+            <img src="{{ user_image }}" alt="icon">
+            <button class="active" id="new_entry_btn" onclick="window.location.href='/home'">Enter New Prisoner</button>
+            <button id="prisoner_data" onclick="window.location.href='/prisoners_data'">Prisoner Data</button>
+            <button id="release_prisoner" onclick="window.location.href='/release_prisoner'">Release Prisoner</button>
+            <button id="dash_board" onclick="window.location.href='/dashboard'">Dash Board</button>
+            <button id="logout_btn" onclick="window.location.href='/login'">Log Out</button>
+        </div>
+
+        <div class="add_admin">
+            <form action="" method="post" autocomplete="off">
+
+                <label for="new_password">Enter User Name &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp : </label>
+                <input type="text" id="new_password" name="username"><br/>
+
+                <label for="admin_password">Enter New Password &nbsp &nbsp &nbsp &nbsp &nbsp: </label>
+                <input type="text" id="admin_password" name="password"><br/>
+
+                <label for="re-enter_admin_password">Re-Enter Your New Password &nbsp: </label>
+                <input type="text" id="re-enter_admin_password"><br/>
+                <button class="btn" id="back_btn" onclick="back()"><a href="dashboard.php">Back</a> </button>
+                <button class="btn" id="save_btn" name="save"> Save </button>
+            </form>
+
+        </div>
+    </div>
+    <div id="bg2"></div>
+
+</body>
+</html>
