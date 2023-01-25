@@ -1,19 +1,28 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template,session,redirect,url_for
 from flask import request
+import mysql.connector
 import os
 
 from block import write_block, check_intergrity
 from search import search
 
+connection= mysql.connector.connect(host='localhost', port='3306', 
+                                    database='records',
+                                    user= 'root',
+                                    password='')
 
+cursor = connection.cursor()
 app = Flask(__name__)
+app.secret_key="super secret key"
 
 picFolder = os.path.join('static', 'pics')
 print(picFolder)
 app.config['UPLOAD_FOLDER'] = picFolder
 
-
+@app.route("/home")
+def home():
+    return render_template('index.html', username=session['username'])
 
 
 @app.route('/home', methods=['POST', 'GET'])
@@ -33,15 +42,34 @@ def index():
 
         write_block(id=id, name=name, dob=dob, nic=nic, address=address, bio=bio, cad=cad, pd=pd, fd=fd, ed=ed, rd=rd)
 
-    pic1 = os.path.join(app.config['UPLOAD_FOLDER'], 'icon2.png')
-    pic11 = os.path.join(app.config['UPLOAD_FOLDER'], 'icon21.png')
-
-    return render_template("index.html", user_image=pic1)  
+    return render_template("index.html", username=session['username'])  
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
+    if request.method == 'POST':
+        # Get the user's input
+        username = request.form['username']
+        password = request.form['password']
+
+        # Connect to the database and check if the user exists
+        # cur = mysql.connection.cursor()
+        cursor.execute("SELECT * FROM admin1 WHERE aid = %s AND pass = %s", (username, password))
+        user = cursor.fetchone()
+   
+
+        # If the user exists, log them in
+        if user:
+            session['logged_in'] = True
+            session['username'] = user[1]
+            return redirect(url_for('home'))
+        else:
+            # If the user doesn't exist or the password is incorrect, show an error message
+            error = "Invalid username or password"
+            return render_template('login.html', error=error)
     return render_template('login.html')
+
+
 
 
 @app.route('/release_prisoner')
